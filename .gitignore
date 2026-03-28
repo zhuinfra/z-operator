@@ -12,12 +12,14 @@ testbin/
 
 # Output of the go coverage tool
 *.out
+coverage.html
 
 # Dependency directories
 vendor/
 
 # Go workspace file
 go.work
+go.work.sum
 
 # IDE
 .idea/
@@ -25,6 +27,8 @@ go.work
 *.swp
 *.swo
 *~
+\#*\#
+.#*
 
 # OS generated files
 .DS_Store
@@ -38,6 +42,7 @@ Thumbs.db
 # Kubernetes
 kubeconfig
 *.kubeconfig
+.kube/
 
 # Docker
 .docker/
@@ -45,11 +50,13 @@ kubeconfig
 # Build output
 dist/
 build/
+output/
 
 # Temporary files
 tmp/
 *.tmp
 *.bak
+*.orig
 
 # Logs
 *.log
@@ -59,8 +66,210 @@ tmp/
 .env.local
 .env.*.local
 
-# Kubebuilder
+# Kubebuilder generated files (from make manifests)
 config/crd/bases/
-config/rbac/
-config/manager/
-config/default/
+config/rbac/role.yaml
+config/webhook/manifests.yaml
+config/default/manager_auth_proxy_patch.yaml
+
+# Kubebuilder generated Go files (from make generate)
+**/zz_generated.deepcopy.go
+**/zz_generated.conversion.go
+**/zz_generated.defaults.go
+
+# Controller-gen output
+*.out
+
+# Test environment
+testbin/
+bin/
+
+# Kind cluster config
+.kind/
+
+# Helm chart dependencies
+charts/*/charts/
+
+# Temporary build files
+.tmp/
+.cache/
+
+# Go build cache
+.cache/
+
+# Coverage reports
+cover.out
+cover.html
+coverage.txt
+
+# Benchmark results
+bench.out
+bench.txt
+
+# Profiling data
+*.prof
+*.pprof
+
+# Binary releases
+releases/
+
+# Local development
+local/
+dev/
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Editor swap files
+*.swp
+*.swo
+*.swn
+*~
+
+# JetBrains IDEs
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.netrwhist
+Session.vim
+
+# Emacs
+\#*\#
+.#*
+*~
+
+# macOS
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# Go specific
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+*.prof
+*.pprof
+
+# Go modules (if using vendor, keep vendor/ but ignore go.sum changes)
+go.sum
+
+# Test cache
+.testcache/
+
+# Coverage
+coverage/
+coverprofile/
+
+# Build artifacts
+artifacts/
+
+# Release files
+release/
+dist/
+
+# Documentation builds
+docs/public/
+docs/resources/_gen/
+
+# Hugo (if using for docs)
+.hugo_build.lock
+
+# Node.js (if any frontend)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python (if any scripts)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Ruby (if any scripts)
+.bundle
+vendor/bundle
+lib/bundler/man/
+
+# Terraform (if any IaC)
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terraformrc
+terraform.rc
+
+# Ansible (if any automation)
+*.retry
+
+# Secrets and credentials
+*.pem
+*.key
+*.crt
+*.csr
+*.srl
+credentials.json
+service-account.json
